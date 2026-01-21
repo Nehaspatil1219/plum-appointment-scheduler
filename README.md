@@ -1,51 +1,62 @@
-# Appointment Scheduler Bot
+# Plum Appointment Scheduler
 
-This project is a simple NLP-based appointment scheduler built using Python and Flask.
+AI-powered appointment scheduling backend built using Python and Flask.  
+This project converts natural language text into structured appointment data using a multi-step processing pipeline.
 
-It extracts:
-- Date  
-- Time  
-- Department  
-from natural language text.
+## 🚀 Features
 
----
+- Accepts free-text appointment requests
+- Extracts date, time, and department from text
+- Normalizes date and time into standard format
+- Returns structured JSON output
+- REST API built with Flask
 
-## Features
-- Accepts natural language input  
-- Extracts appointment details  
-- Handles relative dates like "tomorrow"  
-- Returns structured JSON output  
+## 🛠️ Tech Stack
 
----
-
-## Tech Stack
-- Python  
+- Python 3  
 - Flask  
 - python-dateutil  
 - pytz  
 
----
+## 📂 Project Structure
 
-## How to Run
+plum-appointment-scheduler/
+├── bot.py  
+├── requirements.txt  
+└── README.md  
 
-1. Install dependencies
+## ▶️ How to Run the Project
 
-pip install -r requirements.txt
+1. Clone the repository:
 
-2. Run the app
+git clone https://github.com/Nehaspatil1219/plum-appointment-scheduler.git  
+cd plum-appointment-scheduler  
 
-python app.py
+2. Install dependencies:
 
-3. Test using PowerShell
+pip install -r requirements.txt  
 
-Invoke-RestMethod -Uri http://127.0.0.1:5000/schedule `
-  -Method POST `
-  -ContentType "application/json" `
-  -Body '{"text":"Eye checkup on 5 Feb at 10:30"}'
+3. Run the Flask server:
 
----
+python bot.py  
 
-## Sample Output
+4. The API will start at:
+
+http://127.0.0.1:5000  
+
+## 🧪 Example API Request
+
+Send a POST request to:
+
+POST /schedule  
+
+With JSON body:
+
+{
+  "text": "Eye checkup on 5 Feb at 10:30"
+}
+
+## 📤 Example Response
 
 {
   "appointment": {
@@ -56,3 +67,11 @@ Invoke-RestMethod -Uri http://127.0.0.1:5000/schedule `
   },
   "status": "ok"
 }
+
+## 🎯 Learning Outcome
+
+- Built REST APIs using Flask  
+- Implemented entity extraction and normalization  
+- Worked with date-time parsing and time zones  
+- Designed multi-step NLP-style processing pipeline  
+
